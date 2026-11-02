@@ -1,0 +1,76 @@
+name: 不具合の報告
+description: CDNeo の動作がおかしいときに使います
+title: "[不具合] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ご報告ありがとうございます。分かる範囲でご記入ください。
+        **フォルダ名やファイル名などの個人的な情報は、書かないでください。**（必要なら、伏せ字にしてください）
+  - type: input
+    id: version
+    attributes:
+      label: CDNeo のバージョン
+      description: ［ヘルプ］－［バージョン情報］で確認できます。
+      placeholder: "例: 1.00"
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows のバージョン
+      placeholder: "例: Windows 11 24H2"
+    validations:
+      required: true
+  - type: dropdown
+    id: operation
+    attributes:
+      label: どの操作ですか
+      options:
+        - 変換
+        - CHD
+        - マウント
+        - 書庫（ZIP・RAR）の扱い
+        - その他
+    validations:
+      required: true
+  - type: input
+    id: image
+    attributes:
+      label: イメージの形式
+      description: 拡張子と、分かれば作成したソフトを書いてください。
+      placeholder: "例: .mdx（DAEMON Tools）、.cdi（DiscJuggler 3.5）、.cue＋.ape"
+    validations:
+      required: false
+  - type: textarea
+    id: what
+    attributes:
+      label: どうなりましたか
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現する手順
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 本来はどうなってほしいか
+    validations:
+      required: false
+  - type: textarea
+    id: log
+    attributes:
+      label: ログ（任意）
+      description: |
+        `%LOCALAPPDATA%\CDNeo` の `log_（日付）.txt` の関連部分です。**ファイル名やフォルダ名などの個人的な情報が含まれることがあります。内容を確認し、伏せてから貼ってください。**
+      render: text
+    validations:
+      required: false
